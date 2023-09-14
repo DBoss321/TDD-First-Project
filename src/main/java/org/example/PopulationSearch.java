@@ -9,8 +9,8 @@ public class PopulationSearch {
     }
 
     public int getPopulation(String city) {
-        int populationCount = 0;
-        if(city=="")
+        int populationCount;
+        if(city.equals(""))
             throw new NullPointerException ("Input cannot be empty");
         Map<String,Integer> populationMap = getPopulationStatistics();
         if(!populationMap.containsKey(city))
@@ -28,5 +28,12 @@ public class PopulationSearch {
         populationMap.put("Pune",300000);
         populationMap.put("Mumbai",800000);
         return populationMap;
+    }
+
+    public boolean checkEqual(String city1, String city2) {
+        Map<String,Integer> populationMap = getPopulationStatistics();
+        if(populationMap.get(city1) == populationMap.get(city2))
+            return true;
+        return false;
     }
 }
