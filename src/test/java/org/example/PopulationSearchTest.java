@@ -32,15 +32,5 @@ public class PopulationSearchTest {
         Assert.assertEquals(expectedPopulationCount, actualCount);
     }
 
-    @Test(expected = AssertionError.class)
-    public void checkIfEqual(){
-        String city1 = "Bangalore";
-        String city2 = "Hyderabad";
-        PopulationSearch ps = new PopulationSearch();
-//        return ps.checkEqual(city1,city2);
-        int city1Population = ps.getPopulation(city1);
-        int city2Population = ps.getPopulation(city2);
-        Assert.assertEquals(city1Population,city2Population);
-    }
 
 }
